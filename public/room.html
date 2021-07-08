@@ -16,7 +16,7 @@
         const params = new URLSearchParams(location.search);
         if (!params.get("room")) location.href = "/";
     </script>
-    <title>Meet</title>
+    <title>Mico Teams</title>
 </head>
 
 <body>
@@ -30,6 +30,34 @@
     </div>
     <div class="container-room">
         <div class="left-cont">
+
+            <div class="footer">
+                <div class="utils">
+
+                    <div class="audio">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="novideo">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="screenshare tooltip">
+                        <i class="fas fa-desktop"></i>
+                        <span class="tooltiptext">Share Screen</span>
+                    </div>
+                    <div class="board-icon tooltip">
+                        <i class="fas fa-chalkboard"></i>
+                        <span class="tooltiptext">Whiteboard</span>
+                    </div>
+                    <div class="cutcall tooltip">
+                        <i class="fas fa-phone-slash"></i>
+                        <span class="tooltiptext">Leave Call</span>
+                    </div>
+                </div>
+                <div class="copycode-cont">
+                    <div class="roomcode"></div>
+                    <button class="copycode-button" onclick="CopyClassText()">Copy Code</button>
+                </div>
+            </div>
 
             <div class="video-cont-single" id="vcont">
                 <div class="video-box">
@@ -58,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="footer">
+            <!-- <div class="footer">
                 <div class="utils">
 
                     <div class="audio">
@@ -67,10 +95,10 @@
                     <div class="novideo">
                         <i class="fas fa-video"></i>
                     </div>
-                    <!-- <div class="screenshare tooltip">
+                    <div class="screenshare tooltip">
                         <i class="fas fa-desktop"></i>
                         <span class="tooltiptext">Share Screen</span>
-                    </div> -->
+                    </div>
                     <div class="board-icon tooltip">
                         <i class="fas fa-chalkboard"></i>
                         <span class="tooltiptext">Whiteboard</span>
@@ -86,12 +114,12 @@
                     <div class="roomcode"></div>
                     <button class="copycode-button" onclick="CopyClassText()">Copy Code</button>
                 </div>
-            </div>
+            </div> -->
 
 
         </div>
 
-        <div class="right-cont">
+        <div class="right-cont" style="display: none;">
             <div class="head-title">
 
                 <div class="chats"><i class="fas fa-comment-alt mr-1"></i>Chats</div>
@@ -113,6 +141,7 @@
     <script src="js/room.js"></script>
     <script src="js/video.js"></script>
     <script src="js/whiteboard.js"></script>
+    <!-- <script src="js/screenshare.js"></script> -->
 </body>
 
 </html>
