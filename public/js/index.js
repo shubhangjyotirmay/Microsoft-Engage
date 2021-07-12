@@ -17,6 +17,7 @@ navigator.mediaDevices.getUserMedia(mediaConstraints).then(localstream => {
     videoCont.srcObject = localstream;
 })
 
+//  Generating room code
 function uuidv4() {
     return 'xxyxyxxyx'.replace(/[xy]/g, function (c) {
         var r = Math.random() * 16 | 0,
@@ -25,6 +26,7 @@ function uuidv4() {
     });
 }
 
+//  Creating Room
 const createroomtext = 'Creating Room...';
 
 createButton.addEventListener('click', (e) => {
@@ -41,10 +43,10 @@ createButton.addEventListener('click', (e) => {
         }
     }, 500);
 
-    //const name = nameField.value;
     location.href = `/room.html?room=${uuidv4()}`;
 });
 
+//  Joining Room
 joinBut.addEventListener('click', (e) => {
     e.preventDefault();
     if (codeCont.value.trim() == "") {
@@ -63,6 +65,7 @@ codeCont.addEventListener('change', (e) => {
     }
 })
 
+//  Index page cam/audio
 cam.addEventListener('click', () => {
     if (camAllowed) {
         mediaConstraints = {
@@ -122,3 +125,24 @@ mic.addEventListener('click', () => {
         micAllowed = 1;
     }
 })
+
+//  Index Clock
+function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.querySelector('.index-time').innerHTML = h + ":" + m + ":" + s;
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i
+    }; // add zero in front of numbers < 10
+    return i;
+}
+
+startTime();

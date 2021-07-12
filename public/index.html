@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create and Join meetings with whiteboard and chat">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,33 +13,41 @@
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/6510466b6c.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/favicon.png" />
     <title>Micro Teams</title>
 </head>
 
-<body style="background-color: bisque;">
-    <navbar>
-        <div class="logo">Micro Teams</div>
-    </navbar>
+<body>
+    <div class="index-background">
+        <div class="index-container">
+            <div class="index-navbar">
+                <div class="index-navbar-content">
+                    <img src="images/favicon.png" alt="">
+                    <div class="heading-nav">Micro Teams</div>
+                </div>
+                <div class="index-time"></div>
+            </div>
 
-    <div class="main">
-        <div class="video-cont">
-            <video class="video-self" autoplay muted playsinline></video>
-            <div class="settings">
-                <div class="device" id="mic"><i class="fas fa-microphone"></i></div>
-                <div class="device" id="webcam"><i class="fas fa-video"></i></div>
+            <div class="main">
+                <div class="video-cont">
+                    <video class="video-self" autoplay muted playsinline></video>
+                    <div class="settings">
+                        <div class="device" id="mic"><i class="fas fa-microphone"></i></div>
+                        <div class="device" id="webcam"><i class="fas fa-video"></i></div>
+                    </div>
+                </div>
+                <div class="create-join">
+                    <button id="createroom" class="createroom-butt unselectable">Create New Room</button><br>
+                    <div class="text">
+                        <div class="head">Or</div>
+                    </div>
+                    <input type="text" name="room" spellcheck="false" placeholder="Enter Room Code" id="roomcode"
+                        class="roomcode"><br>
+                    <div class="joinroom unselectable" id="joinroom">Join Room</div>
+                </div>
             </div>
-        </div>
-        <div class="create-join">
-            <div class="text">
-                <div class="head">Create a Room or Join using code</div>
-            </div>
-            <button id="createroom" class="createroom-butt unselectable">Create New Room</button><br>
-            <input type="text" name="room" spellcheck="false" placeholder="Enter Room Code" id="roomcode"
-                class="roomcode"><br>
-            <div class="joinroom unselectable" id="joinroom">Join Room</div>
         </div>
     </div>
-
     <script src="js/index.js"></script>
 </body>
 
