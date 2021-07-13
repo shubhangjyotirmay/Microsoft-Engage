@@ -25,12 +25,24 @@
     6. HTML Canvas
  
     
-### To set up the project locally, clone the repo and run the following command
-* npm run dev <br /> 
-**or** <br />
-* node server
-
-### The project would then be running on localhost:3000
+## Getting Started
+   1. Clone the repo
+      ```sh
+      git clone https://github.com/shubhangjyotirmay/Microsoft-Engage.git
+      ```
+   2. install the npm packages
+      ```sh
+      npm install
+      ```      
+   3. start the server
+      ```sh
+      npm start
+      ```
+      or if the above command does not work, then:
+      ```sh
+      node server
+      ```
+### The website should now be running on localhost:3000
 
 ## Mentors
     * Ms Pratibha Gaund
