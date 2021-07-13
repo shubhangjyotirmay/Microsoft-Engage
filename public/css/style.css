@@ -793,6 +793,7 @@ body {
   font-weight: bold;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  margin-left: 10px;
 }
 
 .container-room .left-cont .footer .copycode-cont .copycode-button {
@@ -804,8 +805,8 @@ body {
   border: none;
   font-weight: bold;
   outline: none;
-  border-radius: 5px;
-  margin-left: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .container-room .left-cont .footer .copycode-cont .copycode-button:hover {
