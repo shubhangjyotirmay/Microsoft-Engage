@@ -28,4 +28,11 @@
 ### To set up the project locally, clone the repo and run the following command
 * npm run dev or node server.js
 
-### The project would then be running on localhost:3000
+#### The project would then be running on localhost:3000
+
+### Mentors
+    1. Ms Pratibha Gaund
+    2. Mr Naveen Luhach
+    
+### Developed By
+    1. Shubhang Jyotirmay
