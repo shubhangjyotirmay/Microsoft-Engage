@@ -143,14 +143,17 @@ function handleVideoOffer(offer, sid, cname, micinf, vidinf) {
             let name = document.createElement('div');
             let muteIcon = document.createElement('div');
             let videoOff = document.createElement('div');
+            let fullScreen = document.createElement('div');
             videoOff.classList.add('video-off');
             muteIcon.classList.add('mute-icon');
+            fullScreen.classList.add('full-screen');
             name.classList.add('nametag');
             name.innerHTML = `${cName[sid]}`;
             vidCont.id = sid;
             muteIcon.id = `mute${sid}`;
             videoOff.id = `vidoff${sid}`;
             muteIcon.innerHTML = `<i class="fas fa-microphone-slash"></i>`;
+            fullScreen.innerHTML = `<i class="fas fa-compress"></i>`;
             videoOff.innerHTML = 'Video Off'
             vidCont.classList.add('video-box');
             newvideo.classList.add('video-frame');
@@ -173,6 +176,7 @@ function handleVideoOffer(offer, sid, cname, micinf, vidinf) {
             vidCont.appendChild(name);
             vidCont.appendChild(muteIcon);
             vidCont.appendChild(videoOff);
+            vidCont.appendChild(fullScreen);
 
             videoContainer.appendChild(vidCont);
 
@@ -293,14 +297,17 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
                     let name = document.createElement('div');
                     let muteIcon = document.createElement('div');
                     let videoOff = document.createElement('div');
+                    let fullScreen = document.createElement('div');
                     videoOff.classList.add('video-off');
                     muteIcon.classList.add('mute-icon');
+                    fullScreen.classList.add('full-screen');
                     name.classList.add('nametag');
                     name.innerHTML = `${cName[sid]}`;
                     vidCont.id = sid;
                     muteIcon.id = `mute${sid}`;
                     videoOff.id = `vidoff${sid}`;
                     muteIcon.innerHTML = `<i class="fas fa-microphone-slash"></i>`;
+                    fullScreen.innerHTML = `<i class="fas fa-compress"></i>`;
                     videoOff.innerHTML = 'Video Off'
                     vidCont.classList.add('video-box');
                     newvideo.classList.add('video-frame');
@@ -323,6 +330,7 @@ socket.on('join room', async (conc, cnames, micinfo, videoinfo) => {
                     vidCont.appendChild(name);
                     vidCont.appendChild(muteIcon);
                     vidCont.appendChild(videoOff);
+                    vidCont.appendChild(fullScreen);
 
                     videoContainer.appendChild(vidCont);
 

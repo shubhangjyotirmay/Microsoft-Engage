@@ -10,18 +10,19 @@ let chatToggle = document.querySelector(".chatting");
 
 //  Room id
 const roomid = params.get("room");
-// document.querySelector('.roomcode').innerHTML = `${roomid}`
+document.querySelector('.roomcode').innerHTML = `${roomid}`
 
 //  name set
 let username;
+let vidCon;
 
 continueButt.addEventListener('click', () => {
     if (nameField.value == '') return;
     username = nameField.value;
-    overlayContainer.style.visibility = 'hidden';
+    overlayContainer.classList.add("hidden");
+    //overlayContainer.style.visibility = 'hidden';
     document.querySelector("#myname").innerHTML = `${username} (You)`;
     socket.emit("join room", roomid, username);
-
 })
 
 nameField.addEventListener("keyup", function (event) {
@@ -85,29 +86,36 @@ function checkTime(i) {
 startTime();
 
 //  Chat slide
-let z = 0;
-
-// function openNav() {
-//     document.querySelector(".mySidenav").style.width = "250px";
-//     document.querySelector("main").style.marginLeft = "250px";
-// }
-
-// function closeNav() {
-//     document.getElementById("mySidenav").style.width = "0";
-//     document.getElementById("main").style.marginLeft = "0";
-// }
-
-// chatToggle.addEventListener('click', () => {
-//     if (z == 0) {
-//         openNav();
-//         z = 1;
-//     } else {
-//         closeNav();
-//         z = 0;
-//     }
-// })
-
 let chatContainer = document.querySelector(".right-cont");
 chatToggle.addEventListener('click', () => {
     chatContainer.classList.toggle("hidden");
-})
+});
+
+///  Full Screen
+function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}
+
+
+function allFullScreen() {
+    //console.log("count is " + count);
+    let fullBut = document.querySelectorAll(`.full-screen`);
+    for (let i = 0; i < fullBut.length; i++) {
+        //console.log("here + " + i + i);
+        fullBut[i].addEventListener('click', () => {
+            let fullVideo = fullBut[i].parentNode;
+            openFullscreen(fullVideo);
+        })
+    }
+    setTimeout(allFullScreen, 1);
+}
+
+allFullScreen();
